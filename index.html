@@ -14,6 +14,16 @@
         height: 100vh;
         background-color: aquamarine;
       }
+      .box {
+        width :3rem;
+        height:3rem;
+        border-radius:50%;
+        position:absolute;
+        top:4rem;
+        left: 15rem;
+        background-color: blue;
+        z-index: 2;
+      } 
 
       #human {
         width: 19rem;
@@ -75,6 +85,7 @@
   </head>
   <body>
     <div id="human_div">
+      <div id="boxee" class="box"></div>
       <img src="./Human-being.webp" id="human" />
       <div id="flag_div">
         <img src="./Swaziland-flag.png" id="switzerland-flag" />
@@ -82,15 +93,15 @@
     </div>
 
     <script>
-      const humanImage = document.getElementById("human");
+      const boxee = document.getElementById("boxee");
 
       // Add a class to the second box when the first box is hovered over
-      humanImage.addEventListener("mouseover", function () {
+      boxee.addEventListener("mouseover", function () {
         document.getElementById("switzerland-flag").classList.add("wiggle");
       });
 
       // Remove the class from the second box when the first box is no longer hovered over
-      humanImage.addEventListener("mouseout", function () {
+      boxee.addEventListener("mouseout", function () {
         document.getElementById("switzerland-flag").classList.remove("wiggle");
       });
     </script>
