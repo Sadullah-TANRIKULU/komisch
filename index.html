@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shake Hands with Switzerland Flag</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #eee;
+      }
+
+      #human {
+        width: 19rem;
+        height: 40rem;
+        cursor: pointer;
+        z-index: 0;
+      }
+
+      #human_div {
+        position: relative;
+        z-index: 0;
+      }
+
+      #flag_div {
+        position: absolute;
+        top: 12rem;
+        right: -3rem;
+        border-color: red;
+        z-index: 1;
+      }
+
+      #switzerland-flag {
+        z-index: 1;
+        width: 10rem;
+        height: 10rem;
+      }
+
+      #switzerland-flag {
+        z-index: 1;
+        width: 10rem;
+        height: 10rem;
+      }
+
+      .wiggle {
+        animation: wiggle 2s linear infinite;
+      }
+
+      /* Keyframes */
+      @keyframes wiggle {
+        0%,
+        7% {
+          transform: rotateZ(0);
+        }
+        15% {
+          transform: rotateZ(-15deg);
+        }
+        20% {
+          transform: rotateZ(10deg);
+        }
+        25% {
+          transform: rotateZ(-10deg);
+        }
+        30% {
+          transform: rotateZ(6deg);
+        }
+        35% {
+          transform: rotateZ(-4deg);
+        }
+        40%,
+        100% {
+          transform: rotateZ(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="human_div">
+      <img src="./Human-being.webp" id="human" />
+      <div id="flag_div">
+        <img src="./Swaziland-flag.png" id="switzerland-flag" />
+      </div>
+    </div>
+
+    <script>
+      const humanImage = document.getElementById("human");
+      const switzerlandFlagImage = document.getElementById("switzerland-flag");
+
+      // Add a class to the second box when the first box is hovered over
+      humanImage.addEventListener("mouseover", function () {
+        document.getElementById("switzerland-flag").classList.add("wiggle");
+      });
+
+      // Remove the class from the second box when the first box is no longer hovered over
+      humanImage.addEventListener("mouseout", function () {
+        document.getElementById("switzerland-flag").classList.remove("wiggle");
+      });
+    </script>
+  </body>
+</html>
